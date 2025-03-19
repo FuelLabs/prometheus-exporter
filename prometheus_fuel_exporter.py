@@ -9,7 +9,7 @@ import requests
 from prometheus_client import start_http_server
 from prometheus_client.core import GaugeMetricFamily, CounterMetricFamily, REGISTRY
 
-logging.basicConfig(stream=sys.stdout, level=os.environ.get('LOGLEVEL', 'INFO').upper())
+logging.basicConfig(stream=sys.stdout, level=os.environ.get('LOGLEVEL', 'info').upper())
 logger = logging.getLogger(__name__)
 
 
