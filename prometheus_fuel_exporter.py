@@ -130,7 +130,7 @@ if __name__ == "__main__":
     balance_owner = os.environ.get("BALANCE_OWNER", "N/A")
     balance_asset_id = os.environ.get("BALANCE_ASSET_ID", "N/A")
     faucet_url = os.environ.get("FAUCET_URL", "N/A")
-    polling_interval = os.environ.get('POLLING_INTERVAL', '1000')
+    polling_interval = int(os.environ.get('POLLING_INTERVAL', '1000'))
 
     logger.debug("CONFIG:network: " + network)
     logger.debug("CONFIG:app_port: " + app_port)
