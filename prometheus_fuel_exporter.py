@@ -130,6 +130,7 @@ if __name__ == "__main__":
     balance_owner = os.environ.get("BALANCE_OWNER", "N/A")
     balance_asset_id = os.environ.get("BALANCE_ASSET_ID", "N/A")
     faucet_url = os.environ.get("FAUCET_URL", "N/A")
+    polling_interval = os.environ.get('POLLING_INTERVAL', '1000')
 
     logger.debug("CONFIG:network: " + network)
     logger.debug("CONFIG:app_port: " + app_port)
@@ -145,4 +146,4 @@ if __name__ == "__main__":
     REGISTRY.register(FuelCollector(network, graphql_url, balance_owner, balance_asset_id, faucet_url))
 
     while True:
-        time.sleep(1)
+        time.sleep(polling_interval / 1000)
